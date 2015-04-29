@@ -28,3 +28,12 @@ You replace it with the following:
 
 You can optionally add in the following parameter(s):
 * ``css_class``: defines the class attribute to add to the resulting ``<figure>`` element.
+
+## Gotchas
+Since the generated ``<figure>`` element is an block level element, and
+it will technically be empty, it will have zero dimensions. To compensate for
+this, the module default to setting the generic class ``image_proxy`` to a
+width of 100%, height of 100% and the image size to ``cover``. If your needs
+are different, you must explicitly define your preferences in your stylesheets,
+but in such a way as to override the ``.image_proxy`` declaration (either by
+defining a more specific selector, or by using the ``!important`` directive).
